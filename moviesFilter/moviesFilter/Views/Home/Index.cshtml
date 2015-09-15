@@ -1,0 +1,24 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html ng-app="Filters">
+<head>
+    <title>movies</title>
+    <meta charset="utf-8" />
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/ngApp/app.js"></script>
+    <script src="~/Scripts/ngApp/filters.js"></script>
+</head>
+
+<body ng-controller="MovieController as main">
+    <ul>
+        @*{{main.movies}}
+        {{main.movies|unique}}*@
+        <li ng-repeat="movie in main.movies|unique">
+            {{movie}}
+        </li>
+    </ul>
+</body>
+</html>

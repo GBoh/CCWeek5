@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html ng-app="Calculator">
+<head>
+    <title>World's best calculator at addition</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/ngApp/app.js"></script>
+    <script src="~/Scripts/ngApp/controllers.js"></script>
+</head>
+
+@* way three with object.defineProperty *@
+<body ng-controller="CalculatorController as calc">
+
+    <div>
+        <input type="number" ng-model="calc.num1" />
+        +
+        <input type="number" ng-model="calc.num2" />
+
+        <span style="transform:rotate(90deg)" class="glyphicon glyphicon-pause"></span>
+        {{calc.total}}
+
+    </div>
+
+</body>
+
+@* Way two using scope *@
+@*<body ng-controller="CalculatorController as calc">
+
+    <div>
+        <input type="number" ng-model="num1" />
+        +
+        <input type="number" ng-model="num2" />
+
+        <span style="transform:rotate(90deg)" class="glyphicon glyphicon-pause"></span>
+        {{calc.total()}}
+
+    </div>
+
+</body>*@
+
+@* way one without controller *@
+@*<body>
+
+    <div>
+        <input type="number" ng-model="calc.num1" />
+        +
+        <input type="number" ng-model="calc.num2" />
+
+        <span style="transform:rotate(90deg)" class="glyphicon glyphicon-pause"></span>
+        {{calc.num1 + calc.num2}}
+
+    </div>
+
+</body>*@
+
+</html>

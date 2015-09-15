@@ -1,0 +1,34 @@
+﻿
+<!DOCTYPE html>
+<html ng-app="DataBinding">
+<head>
+    <title>Favorite Color</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/ngApp/app.js"></script>
+    <script src="~/Scripts/ngApp/controllers.js"></script>
+</head>
+
+<body ng-controller="FavoriteColorController as favColor">
+    <h2>What is your favorite color?</h2>
+
+    <button class="btn" ng-click="favColor.pickColor('red')">Red</button>
+    <button class="btn" ng-click="favColor.pickColor('green')">Green</button>
+    <button class="btn" ng-click="favColor.pickColor('blue')">Blue</button>
+    <button class="btn" ng-click="favColor.pickColor('salmon')">Salmon</button>
+    <button class="btn" ng-click="favColor.pickColor('cornflowerblue')">Corn flower blue</button>
+
+    <div>
+        <h2 style="display:inline-block">Your favorite color is:</h2><div style="width:25px; 
+                                                                          height:25px; 
+                                                                          border-radius:50%; 
+                                                                          display:inline-block; 
+                                                                          position:relative; 
+                                                                          top:3px; 
+                                                                          background-color:{{favColor.color}}"></div>
+        <br />
+        <output>{{favColor.color}}</output>
+    </div>
+
+</body>
+
+</html>

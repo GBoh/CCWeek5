@@ -1,0 +1,109 @@
+﻿<!DOCTYPE html>
+<html ng-app="Employee">
+<head>
+    <title>New Employee</title>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/ngApp/app.js"></script>
+    <script src="~/Scripts/ngApp/controllers.js"></script>
+
+    <style>
+        .ng-invalid.ng-touched {
+            background-color: #ff3d3d;
+        }
+
+        .checkmark {
+            font-size: 1.5em;
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="empForm" novalidate>
+        <div>
+            <label>
+                First Name:
+                <input class="form-control" name="first" ng-model="first" type="text" ng-required="true" />
+            </label>
+            <br />
+            <span ng-show="empForm.first.$touched && empForm.first.$error.required" class="error">
+                Employee first name is required!
+            </span>
+        </div>
+
+        <div>
+            <label>
+                Last Name:
+                <input class="form-control" name="last" ng-model="last" type="text" ng-required="true" />
+            </label>
+            <br />
+            <span ng-show="empForm.last.$touched && empForm.last.$error.required" class="error">
+                Employee last name is required!
+            </span>
+        </div>
+
+
+        <div>
+            <label>
+                Age:
+                <input class="form-control" name="age" ng-model="age" type="number" ng-required="true" />
+            </label>
+            <span class="glyphicon glyphicon-ok checkmark" ng-show="empForm.age.$valid"></span>
+            <br />
+            <span ng-show="empForm.age.$touched && empForm.age.$error.required" class="error">
+                Employee age is required!
+            </span>
+            <span ng-show="empForm.age.$touched && empForm.age.$error.number" class="error">
+                Employee age must be a number!
+            </span>
+        </div>
+
+        <div>
+            <label>
+                Type:
+                <select class="form-control" name="empType" ng-model="empType" ng-required="true">
+                    <option value="fullTime">Full Time</option>
+                    <option value="partTime">Part Time</option>
+                </select>
+            </label>
+            <br />
+            <span ng-show="empForm.empType.$touched && empForm.empType.$error.required" class="error">
+                Employee must have a type!
+            </span>
+        </div>
+
+        <div ng-show="empType == 'fullTime'">
+            <label>
+                Yearly Salary:
+                <input class="form-control" name="yearly" ng-model="yearly" type="number" ng-required="empType == 'fullTime'" />
+            </label><br />
+            <span ng-show="empForm.yearly.$touched && empForm.yearly.$error.required" class="error">
+                Employee salary is requried
+            </span>
+            <span ng-show="empForm.yearly.$touched && empForm.yearly.$error.number" class="error">
+                Employee salary must be a number
+            </span>
+        </div>
+
+        <div ng-show="empType == 'partTime'">
+            <label>
+                Hourly Salary:
+                <input class="form-control" name="hourly" ng-model="hourly" type="number" ng-required="empType == 'partTime'" />
+            </label><br />
+            <span ng-show="empForm.hourly.$touched && empForm.hourly.$error.required" class="error">
+                Employee salary is requried
+            </span>
+            <span ng-show="empForm.hourly.$touched && empForm.hourly.$error.number" class="error">
+                Employee salary must be a number
+            </span>
+        </div>
+
+
+
+        <div>
+            <input class="btn" type="submit" value="Add" ng-disabled="empForm.$invalid" />
+        </div>
+    </form>
+
+</body>
+</html>
