@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html ng-app="AngularAjax">
+<head>
+    <title>http service angular</title>
+    <meta charset="utf-8" />
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-resource.min.js"></script>
+    <script src="~/Scripts/ngApp/app.js"></script>
+    <script src="~/Scripts/ngApp/filters.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+</head>
+
+<body ng-controller="AjaxController as main">
+    <div class="container">
+
+        @*<input ng-model="main.search" ng-model-options="{debounce: 250}" ng-change="main.fetch()" />*@
+
+        <form ng-submit="main.add()">
+            <input ng-model="main.Name" placeholder="Name" />
+            <input ng-model="main.Price" placeholder="Price" />
+            <input type="submit" value="Submit" />
+
+        </form>
+
+        <ul>
+            <li ng-repeat="item in main.items">
+                <div>
+                    {{item.Name}} {{item.Price | currency}} <a href="#" ng-click="food.update(item)">Update</a>
+                </div>
+                <div>
+                    <input ng-model="food.updateName" value="{{item.Name}}" />
+                    <input ng-model="food.updateName" value="{{item.Price}}}" />
+                    <a href="#" ng-click="food.update(item)">Save</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

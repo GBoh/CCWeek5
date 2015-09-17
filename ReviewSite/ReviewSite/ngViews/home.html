@@ -1,0 +1,74 @@
+﻿<div class="jumbotron">
+    <h1>World's best Tibetan Scarves</h1>
+    <p>
+        {{main.message}}
+    </p>
+</div>
+
+<div class="row">
+    <!-- Left side image -->
+    <div class="col-md-4">
+        <img class="img-responsive" src="../Content/images/scarves.jpg" />
+    </div>
+
+    <!-- Right side content -->
+    <div ng-cloak class="col-md-8" id="reviews">
+
+        <!-- Right side reviews -->
+        <div ng-show="!main.reviewForm" class="row">
+            <div ng-repeat="review in main.reviews" ng-if="main.updateReview !== review" class="panel col-md-12">
+                <div class="panel-heading"><h4>{{review.Rating}}/5</h4></div>
+                <div class="panel-body">{{review.Comment}}</div>
+
+                <span>
+                    <input class="btn btn-warning btn-sm" ng-click="main.updateReview = review" value="Edit"/>
+                    <a href="#" ng-click="main.editReview()">Delete</a>
+                </span>
+            </div>
+        </div>
+
+        <!-- Edit form -->
+        <form ng-submit="" novalidate class="row" ng-show="">
+            <label class="col-md-12">
+                Rating 1-5:
+                <input class="form-control" type="text" ng-model="main.Rating" required />
+            </label>
+
+            <label class="col-md-12">
+                Review:
+                <textarea class="form-control" ng-model="main.Comment" style="min-height:100px; max-height:250px; max-width:100%; min-width:100%" required></textarea>
+            </label>
+
+            <div class="col-md-12">
+                <input class="btn btn-primary" type="submit" value="Save" />
+            </div>
+        </form>
+
+        <!-- New review form -->
+        <form ng-submit="main.newReview()" ng-if="main.reviewForm" novalidate class="row">
+
+            <label class="col-md-12">
+                Rating 1-5:
+                <input class="form-control" type="text" ng-model="main.Rating" required/>
+            </label>
+
+            <label class="col-md-12">
+                Review:
+                <textarea class="form-control" ng-model="main.Comment" style="min-height:100px; max-height:250px; max-width:100%; min-width:100%" required></textarea>
+            </label>
+
+            <div class="col-md-12">
+                <input class="btn btn-primary" type="submit" value="Submit" />
+            </div>
+        </form>
+
+        <!-- Review buttons -->
+        <div class="row" ng-show="true">
+            <input class="text-right btn btn-primary" type="submit" value="New Review" ng-click="main.reviewForm = true" />
+            <input class="text-right btn btn-warning" type="submit" value="List Reviews" />
+        </div>
+    </div>
+
+
+</div>
+

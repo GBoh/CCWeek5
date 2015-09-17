@@ -11,5 +11,9 @@ namespace moviesFilter.Controllers {
 
             return View();
         }
+
+        public ActionResult service() {
+            return View();
+        }
     }
 }
