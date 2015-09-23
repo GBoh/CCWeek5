@@ -16,12 +16,12 @@
                 controllerAs: 'main'
             })
             .when('/login', {
-                templateUrl: '/Angular/views/home.html',
-                controller: 'HomeController',
+                templateUrl: '/Angular/views/login.html',
+                controller: 'LoginController',
                 controllerAs: 'main'
             })
             .when('/admin',{
-                templateUrl: '/Angular/views/home.html',
+                templateUrl: '/Angular/views/admin.html',
                 controller: 'AdminController',
                 controllerAs: 'main'
             })

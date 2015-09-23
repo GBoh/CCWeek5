@@ -3,8 +3,7 @@
 (function () {
     angular
         .module('ExclusiveCarDealership')
-        .controller('HomeController', ['$location', 'VehicleService', function ($location, VehicleService) {
+        .controller('HomeController', ['VehicleService', function (VehicleService) {
             this.allCars = VehicleService.query();
         }]);
-
 })();

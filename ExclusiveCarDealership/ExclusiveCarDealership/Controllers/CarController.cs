@@ -9,7 +9,7 @@ using System.Web.Http;
 
 namespace ExclusiveCarDealership.Controllers
 {
-    [Route("api/vehicles", Name = "VehicleApi")]
+    [Route("api/vehicles/", Name = "vehicleApi")]
     public class CarController : ApiController
     {
         private IRepository _repo;
@@ -27,28 +27,5 @@ namespace ExclusiveCarDealership.Controllers
                     where v.Id == id
                     select v).SingleOrDefault();
         }
-
-        [HttpPost]
-        [Route("api/tesla/", Name = "PostTesla")]
-        public HttpResponseMessage PostTesla(Tesla tesla) {
-            if (ModelState.IsValid) {
-                _repo.Add(tesla);
-                _repo.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, tesla);
-            }
-            return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-        }
-
-        [HttpPost]
-        [Route("api/rollsRoyce/", Name = "PostRollsRoyce")]
-        public HttpResponseMessage PostRollsRoyce(RollsRoyce rollsRoyce) {
-            if (ModelState.IsValid) {
-                _repo.Add(rollsRoyce);
-                _repo.SaveChanges();
-                return Request.CreateResponse(HttpStatusCode.OK, rollsRoyce);
-            }
-            return Request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
-        }
-
     }
 }

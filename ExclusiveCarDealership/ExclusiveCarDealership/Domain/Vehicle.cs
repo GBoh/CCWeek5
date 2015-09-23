@@ -29,15 +29,15 @@ namespace ExclusiveCarDealership.Domain {
 
         public string FullDescription { get; set; }
 
-        public Tesla Tesla { get; set; }
-        public RollsRoyce RollsRoyce { get; set; }
+        public ElectricCar ElectricCar { get; set; }
+        public GasCar GasCar { get; set; }
     }
 
     public interface IVehicle {
         Vehicle Base { get; set; }
     }
 
-    public class Tesla : IVehicle{
+    public class ElectricCar : IVehicle{
         public int Id { get; set; }
 
         [Required]
@@ -52,7 +52,7 @@ namespace ExclusiveCarDealership.Domain {
         public int ChargeTime { get; set; }
     }
 
-    public class RollsRoyce : IVehicle {
+    public class GasCar : IVehicle {
         public int Id { get; set; }
 
         [Required]

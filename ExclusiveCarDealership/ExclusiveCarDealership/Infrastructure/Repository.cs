@@ -24,7 +24,7 @@ namespace ExclusiveCarDealership.Infrastructure {
         }
 
         public IQueryable<Vehicle> QueryCar() {
-            return _db.Set<Vehicle>().AsQueryable().Include(c => c.Tesla).Include(c => c.RollsRoyce);
+            return _db.Set<Vehicle>().AsQueryable().Include(c => c.ElectricCar).Include(c => c.GasCar);
         }
 
         public IQueryable<T> QueryICar<T>() where T : class, IVehicle {

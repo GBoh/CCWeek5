@@ -31,7 +31,7 @@ namespace ExclusiveCarDealership.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
-                "dbo.RollsRoyces",
+                "dbo.GasCars",
                 c => new
                     {
                         Id = c.Int(nullable: false),
@@ -57,7 +57,7 @@ namespace ExclusiveCarDealership.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.Teslas",
+                "dbo.ElectricCars",
                 c => new
                     {
                         Id = c.Int(nullable: false),
@@ -120,23 +120,23 @@ namespace ExclusiveCarDealership.Migrations
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
-            DropForeignKey("dbo.RollsRoyces", "Id", "dbo.Vehicles");
-            DropForeignKey("dbo.Teslas", "Id", "dbo.Vehicles");
+            DropForeignKey("dbo.GasCars", "Id", "dbo.Vehicles");
+            DropForeignKey("dbo.ElectricCars", "Id", "dbo.Vehicles");
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.Teslas", new[] { "Id" });
-            DropIndex("dbo.RollsRoyces", new[] { "Id" });
+            DropIndex("dbo.ElectricCars", new[] { "Id" });
+            DropIndex("dbo.GasCars", new[] { "Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.Teslas");
+            DropTable("dbo.ElectricCars");
             DropTable("dbo.Vehicles");
-            DropTable("dbo.RollsRoyces");
+            DropTable("dbo.GasCars");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetRoles");
         }

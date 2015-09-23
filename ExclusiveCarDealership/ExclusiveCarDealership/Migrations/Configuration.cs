@@ -17,7 +17,7 @@ namespace ExclusiveCarDealership.Migrations {
         }
 
         public decimal RandPrice(Random rand) {
-            return (decimal)Math.Round((rand.NextDouble() / 10) * 100000);
+            return (decimal)Math.Round((rand.NextDouble() / 1000) * 100000 * 1000);
         }
 
         public string GetBriefTes() {
@@ -40,7 +40,7 @@ namespace ExclusiveCarDealership.Migrations {
             for (int i = 0; i < 50; i++) {
                 if (rand.NextDouble() > .3) {
                     context.Teslas.AddOrUpdate(
-                                    new Tesla {
+                                    new ElectricCar {
                                         Base = new Vehicle {
                                             Title = TesTitle(rand),
                                             Price = RandPrice(rand),
@@ -55,20 +55,22 @@ namespace ExclusiveCarDealership.Migrations {
                                     }
                                 );
                 }
-                context.RollsRoyces.AddOrUpdate(
-                                    new RollsRoyce {
-                                        Base = new Vehicle {
-                                            Title = "Expensive old persons car",
-                                            Price = RandPrice(rand),
-                                            Make = "Rolls Royce",
-                                            Model = "Rolls Royce",
-                                            BriefDescription = "Super expensive car, looks kinda pretty",
-                                            FullDescription = "You should really be buying the Teslas instead. They are SpaceBoats of light and wonder",
-                                            ImageUrl = "http://i.imgur.com/ZD4upuKl",
-                                        },
-                                        GaseMileage = rand.Next(10, 12)
-                                    }
-                                );
+                else {
+                    context.RollsRoyces.AddOrUpdate(
+                                        new GasCar {
+                                            Base = new Vehicle {
+                                                Title = "Expensive old persons car",
+                                                Price = RandPrice(rand),
+                                                Make = "Rolls Royce",
+                                                Model = "Phantom",
+                                                BriefDescription = "Super expensive car, looks kinda pretty",
+                                                FullDescription = "You should really be buying the Teslas instead. They are SpaceBoats of light and wonder",
+                                                ImageUrl = "http://i.imgur.com/ZD4upuKl",
+                                            },
+                                            GaseMileage = rand.Next(10, 12)
+                                        }
+                                    );
+                }
             }
         }
     }

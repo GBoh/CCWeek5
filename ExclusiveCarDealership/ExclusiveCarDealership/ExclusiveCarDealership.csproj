@@ -244,9 +244,9 @@
     </Compile>
     <Compile Include="Infrastructure\IRepository.cs" />
     <Compile Include="Infrastructure\Repository.cs" />
-    <Compile Include="Migrations\201509171947274_initial.cs" />
-    <Compile Include="Migrations\201509171947274_initial.Designer.cs">
-      <DependentUpon>201509171947274_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201509172218593_initial.cs" />
+    <Compile Include="Migrations\201509172218593_initial.Designer.cs">
+      <DependentUpon>201509172218593_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
@@ -264,6 +264,9 @@
     <Content Include="Angular\scripts\homeController.js" />
     <Content Include="Angular\scripts\adminController.js" />
     <Content Include="Angular\scripts\loginController.js" />
+    <Content Include="Angular\views\admin.html" />
+    <Content Include="Angular\views\home.html" />
+    <Content Include="Angular\views\login.html" />
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -335,7 +338,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Angular\views\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
@@ -347,8 +349,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201509171947274_initial.resx">
-      <DependentUpon>201509171947274_initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201509172218593_initial.resx">
+      <DependentUpon>201509172218593_initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

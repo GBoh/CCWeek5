@@ -33,7 +33,7 @@ namespace ExclusiveCarDealership.Models
         }
 
         public IDbSet<Vehicle> Vehicles { get; set; }
-        public IDbSet<Tesla> Teslas { get; set; }
-        public IDbSet<RollsRoyce> RollsRoyces { get; set; }
+        public IDbSet<ElectricCar> Teslas { get; set; }
+        public IDbSet<GasCar> RollsRoyces { get; set; }
     }
 }
